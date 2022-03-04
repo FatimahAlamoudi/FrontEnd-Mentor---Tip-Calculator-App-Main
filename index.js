@@ -46,10 +46,12 @@ billInput.addEventListener('change', () => {
 peopleNoInput.addEventListener('change', () => {
     if (peopleNoInput.value == '0') {
         peopleNoInput.style.border = '2px solid red';
-        formLabelError.innerHTML = 'Can\'t be zero';
+        formLabelError.innerHTML = 'Can\'t be zero'
+        
     }
     else {
         peopleNoInput.style.border = '2px solid hsl(172, 67%, 45%)';
+        formLabelError.innerHTML = '';
         peopleNoValue = Math.floor(parseFloat(peopleNoInput.value));
         console.log(peopleNoValue);
         calculateBill();

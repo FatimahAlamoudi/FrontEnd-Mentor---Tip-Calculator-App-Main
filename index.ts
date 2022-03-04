@@ -1,4 +1,3 @@
-"use strict";
 let peopleNoInput = (<HTMLInputElement>document.getElementById("people-no"));
 let billInput = (<HTMLInputElement>document.getElementById("bill-price"));
 let totalPrice = (<HTMLBodyElement>document.querySelector('.number-total-amount'));
@@ -61,13 +60,14 @@ billInput.addEventListener('change', () =>{
 })
 
 peopleNoInput.addEventListener('change', () =>{
-    if(peopleNoInput.value == '0')
+    if(parseFloat(peopleNoInput.value) == 0)
     {
         peopleNoInput.style.border = '2px solid red'; 
         formLabelError.innerHTML = 'Can\'t be zero'
     }
     else{
         peopleNoInput.style.border = '2px solid hsl(172, 67%, 45%)'; 
+        formLabelError.innerHTML = ' ';
         peopleNoValue = Math.floor(parseFloat(peopleNoInput.value));
         console.log(peopleNoValue);
         calculateBill();
