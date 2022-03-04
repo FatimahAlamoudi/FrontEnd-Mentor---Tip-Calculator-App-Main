@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Frontend Mentor | Tip calculator app</title>  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="less/main.css">
+
+</head>
+<body>
+    <h2 class="program-name">Spil <br>
+        tter
+    </h2>
+    <main class="container">
+        <div class="calculator">
+            <h4 class="form-label">Bill</h4>
+            <input class="input form-input bill-input" type="number" name="bill-price" id="bill-price" placeholder="0">
+            <h4 class="form-label">Select Tip %</h4>
+            <div class="tips">
+                <button class="btn tip-1">5%</button>
+                <button class="btn tip-2">10%</button>
+                <button class="btn tip-3">15%</button>
+                <button class="btn tip-4">25%</button>
+                <button class="btn tip-5">50%</button>
+                <input class="input custom-input" type="number" name="custom-tip" id="custom-tip" placeholder="Custom">
+            </div> 
+            <div class="people-input-labels"> 
+                <h4 class="form-label">No of People</h4>
+                <h4 class="form-label error"></h4>
+            </div> 
+            <input class="input form-input people-input" type="number" name="people-no" id="people-no" placeholder="0">
+        </div>
+
+        <div class="bill">
+            <div>
+            <div class="tip-amount">
+                <div class="heading-tip-amount">
+                <h4>Tip Amount</h4><br>
+                <p>/ peron</p>
+                </div>
+                <div class="number-tip-amount">
+                    $0.00
+                </div>
+            </div>
+
+            <div class="total-amount">
+                <div class="heading-total-amount">
+                <h4>Total Amount</h4><br>
+                <p>/ peron</p>
+                </div>
+                <div class="number-total-amount">
+                    $0.00
+                </div>
+            </div>
+            </div>
+
+            <button class="reset-btn" disabled>
+                Reset
+            </button>
+        </div>
+        
+    </main>
+    <!-- <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="#">Your Name Here</a>.
+      </div> -->
+      <script src="index.js"></script>
+
+</body>
+</html>
