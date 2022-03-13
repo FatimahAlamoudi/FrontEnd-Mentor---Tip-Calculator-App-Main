@@ -1,83 +1,60 @@
-"use strict";
-let peopleNoInput = document.getElementById("people-no");
-let billInput = document.getElementById("bill-price");
-let totalPrice = document.querySelector('.number-total-amount');
-let totalTax = document.querySelector('.number-tip-amount');
-let button1 = document.querySelector('.tip-1');
-let button2 = document.querySelector('.tip-2');
-let button3 = document.querySelector('.tip-3');
-let button4 = document.querySelector('.tip-4');
-let button5 = document.querySelector('.tip-5');
-let resetButton = document.querySelector('.reset-btn');
-let custom = document.querySelector('.custom-input');
-let tip = 0;
-let formLabelError = document.querySelector('.error');
-let peopleNoValue;
-let billValue;
-button1.addEventListener('click', () => {
-    tip = 0.05;
-    console.log(peopleNoInput.value);
-    calculateBill();
-});
-button2.addEventListener('click', () => {
-    tip = 0.10;
-    calculateBill();
-});
-button3.addEventListener('click', () => {
-    tip = 0.15;
-    calculateBill();
-});
-button4.addEventListener('click', () => {
-    tip = 0.25;
-    calculateBill();
-});
-button5.addEventListener('click', () => {
-    tip = 0.50;
-    calculateBill();
-});
-custom.addEventListener('change', () => {
-    tip = parseFloat(custom.value);
-    calculateBill();
-});
-billInput.addEventListener('change', () => {
-    billValue = parseFloat(billInput.value);
-    console.log(billValue);
-});
-peopleNoInput.addEventListener('change', () => {
-    if (peopleNoInput.value == '0') {
-        peopleNoInput.style.border = '2px solid red';
-        formLabelError.innerHTML = 'Can\'t be zero'
-        
-    }
-    else {
-        peopleNoInput.style.border = '2px solid hsl(172, 67%, 45%)';
-        formLabelError.innerHTML = '';
-        peopleNoValue = Math.floor(parseFloat(peopleNoInput.value));
-        console.log(peopleNoValue);
-        calculateBill();
-        resetButton.style.backgroundColor = 'hsl(172, 67%, 45%)';
-        resetButton.style.color = 'hsl(183, 100%, 15%)';
-        resetButton.disabled = false;
-    }
-});
-resetButton.addEventListener('click', () => {
-    totalPrice.innerHTML = '$ 0.00';
-    totalTax.innerHTML = '$ 0.00';
-    billInput.value = '';
-    peopleNoInput.value = '';
-});
-function calculateBill() {
-    if (peopleNoValue != 0 && peopleNoInput.value.length != 0) {
-        let billTotal = 0;
-        billTotal = Math.floor(billValue + (billValue * tip));
-        console.log('billTotal', billTotal);
-        const billPerPerson = billTotal / peopleNoValue;
-        const tipPerPerson = (billTotal - billValue) / peopleNoValue;
-        totalPrice.innerHTML = '$' + billPerPerson.toFixed(2);
-        totalTax.innerHTML = '$' + tipPerPerson.toFixed(2);
-    }
-    else {
-        totalPrice.innerHTML = '$ 0.00';
-        totalTax.innerHTML = '$ 0.00';
-    }
+
+// @very-dark-blue-bg: hsl(230, 17%, 14%);
+// @very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
+// @dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+// @desaturated-blue-text: hsl(228, 34%, 66%);
+// @white-text: hsl(0, 0%, 100%);
+const toggle = document.querySelector('.checkbox');
+const header = document.querySelector('.header');
+var cards = document.querySelectorAll('.card');
+const heading1 = document.querySelector('.heading-1');
+const heading2 = document.querySelector('.heading-2');
+const toggleHeading = document.querySelector('.toggle-heading-2');
+const overviewHeading = document.querySelector('.overview-heading');
+var noOfFolloweres = document.querySelectorAll('.no-of-followeres'); 
+var detailsNumber = document.querySelectorAll('.details-number');
+var detailsCard = document.querySelectorAll('.details');
+var followers = document.querySelectorAll('.followers');
+var detailHeadingText = document.querySelectorAll('.detail-heading-text');
+
+
+
+toggle.addEventListener('click', changeColor);
+
+
+function changeColor() {
+    document.body.classList.toggle('body-dark');
+    header.classList.toggle('header-dark');
+
+  
+    for (i = 0; i < cards.length; ++i) {
+
+       cards[i].classList.toggle('card-dark');
+      }
+
+      heading1.classList.toggle('heading-1-dark'); 
+      heading2.classList.toggle('heading-2-dark'); 
+      toggleHeading.classList.toggle('heading-2-dark'); 
+      overviewHeading.classList.toggle('heading-1-dark');
+
+      for (i = 0; i < noOfFolloweres.length; ++i) {
+        noOfFolloweres[i].classList.toggle('heading-1-dark');
+       }
+
+       for (i = 0; i < detailsNumber.length; ++i) {
+        detailsNumber[i].classList.toggle('heading-1-dark');
+       }
+
+       for (i = 0; i < detailsCard.length; ++i) {
+        detailsCard[i].classList.toggle('card-dark');
+       }
+
+       for (i = 0; i < followers.length; ++i) {
+        followers[i].classList.toggle('heading-2-dark');
+       }
+
+       for (i = 0; i < detailHeadingText.length; ++i) {
+        detailHeadingText[i].classList.toggle('heading-2-dark');
+       }
+    
 }
