@@ -1,19 +1,19 @@
 "use strict";
-let peopleNoInput = document.getElementById("people-no");
-let billInput = document.getElementById("bill-price");
-let totalPrice = document.querySelector('.number-total-amount');
-let totalTax = document.querySelector('.number-tip-amount');
-let button1 = document.querySelector('.tip-1');
-let button2 = document.querySelector('.tip-2');
-let button3 = document.querySelector('.tip-3');
-let button4 = document.querySelector('.tip-4');
-let button5 = document.querySelector('.tip-5');
-let resetButton = document.querySelector('.reset-btn');
-let custom = document.querySelector('.custom-input');
-let tip = 0;
-let formLabelError = document.querySelector('.error');
-let peopleNoValue;
-let billValue;
+let peopleNoInput = document.getElementById("people-no")
+let billInput = document.getElementById("bill-price")
+let totalPrice = document.querySelector('.number-total-amount')
+let totalTax = document.querySelector('.number-tip-amount')
+let button1 = document.querySelector('.tip-1')
+let button2 = document.querySelector('.tip-2')
+let button3 = document.querySelector('.tip-3')
+let button4 = document.querySelector('.tip-4')
+let button5 = document.querySelector('.tip-5')
+let resetButton = document.querySelector('.reset-btn')
+let custom = document.querySelector('.custom-input')
+let tip = 0
+let formLabelError = document.querySelector('.error')
+let peopleNoValue
+let billValue
 button1.addEventListener('click', () => {
     tip = 0.05;
     console.log(peopleNoInput.value);
